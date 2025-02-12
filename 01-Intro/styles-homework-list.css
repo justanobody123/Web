@@ -1,0 +1,36 @@
+﻿body {
+	font-family: "Oswald", serif;
+}
+.red-text {
+	color: #b92711;
+}
+.yellow-text {
+	color: #E7B52F;
+}
+.green-text {
+	color: #2F7027;
+}
+.blue-text {
+	color: #148EA6;
+}
+.purple-text {
+	color: #613290;
+}
+li {
+	font-weight:600;
+}
+.red-marker {
+	list-style-image: url('extra/images/red_marker.png');
+}
+.yellow-marker {
+	list-style-image: url('extra/images/orange_marker.png');
+}
+.green-marker {
+	list-style-image: url('extra/images/green_marker.png');
+}
+.purple-marker {
+	list-style-image: url('extra/images/blue_marker.png');
+}
+.cross-marker {
+	list-style-image: url('extra/images/black_marker.png');
+}

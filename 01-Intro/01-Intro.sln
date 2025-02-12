@@ -5,8 +5,10 @@ VisualStudioVersion = 17.9.34728.123
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{190A5984-B9C0-45E8-A87E-0E154E172A82}"
 	ProjectSection(SolutionItems) = preProject
+		homework-list.html = homework-list.html
 		intro.html = intro.html
 		lists.html = lists.html
+		styles-homework-list.css = styles-homework-list.css
 		styles.css = styles.css
 	EndProjectSection
 EndProject

@@ -1,0 +1,56 @@
+body 
+{
+	font-family: "Roboto", sans-serif;
+}
+h1, h2, h3 {
+	font-weight: 800;
+	color: blue;
+}
+p
+{
+	text-align:justify;
+	font-weight:300;
+}
+img
+{
+	width: 50%;
+	height: auto;
+
+}
+.image
+{
+	text-align:center;
+	border: 1px solid;
+}
+figcaption
+{
+	font-style:italic;
+}
+table {
+	border: 1px solid #AEAED3;
+}
+tr
+{
+	border: 1px solid;
+}
+th 
+{
+	padding: 10px 25px;
+}
+.header {
+	height: 50px;
+	background-color: #6B5FB5;
+	color: white;
+	font-weight: 700;
+	font-size: .9em;
+	/*border: 1px solid #AEAED3;*/
+}
+.row-header {
+	background-color: cornflowerblue;
+	color: white;
+	width: 200px;
+}
+td {
+	text-align: center;
+	border: 1px solid #AEAED3;
+}

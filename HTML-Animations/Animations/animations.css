@@ -1,0 +1,113 @@
+@keyframes backgroung-animation
+{
+	from 
+	{
+		background-color: aliceblue;
+		  color:darkblue;
+	}
+	to 
+	{
+		background-color:darkblue;
+		color: aliceblue;
+	}
+}
+@keyframes background-animation2
+{
+	25%
+	{
+		background-color:aliceblue;
+		color: darkblue;
+	}
+	75%
+	{
+		background-color:darkblue;
+		color:aliceblue;
+	}
+	100% 
+	{
+		background-color: aliceblue;
+		color: darkblue;
+	}
+}
+@keyframes background-animation3
+{
+	from {
+		background-color: aliceblue;
+		margin-left: 0px;
+		margin-top: 0px;
+	}
+	to
+	{
+		background-color:darkblue;
+		margin-left:100px;
+		margin-top:50px;
+	}
+}
+@keyframes border-animation
+{
+
+}
+body {
+	animation-name: background-animation3;
+	animation-duration: 0s;
+	/*animation-delay:3s;*/
+	animation-iteration-count: infinite;
+	/*animation-direction:alternate;*/
+}
+div
+{
+	border:solid 5px;
+	/*border-left:5px solid;
+	border-right:solid 5px;*/
+	/*width: 200px;
+	height:200px;*/
+	/*margin: 100px;
+	padding:50px;*/
+	width:200px;
+	background-color:darkblue;
+	padding: 50px 20px 40px;
+}
+.button{
+	background-color: darkblue;
+	border: outset 25px;
+	width: 200px;
+	height:200px;
+	padding: 20px 30px 40px 50px;
+	border-radius:25px;
+	margin:25px;
+}
+.pressed-button{
+	background-color: darkblue;
+	height :200px;
+	border: inset 25px;
+	margin: 25px;
+	padding: 20px 30px 40px 50px;
+	border-radius:25px;
+	width:200px;
+
+
+}
+@keyframes button-pressing
+{
+	from {
+		border: outset 25px;
+	}
+	to {
+		border: inset 25px;
+	}
+}
+.button {
+	animation-name: button-pressing;
+	animation-duration: 0.1s;
+}
+.button{
+	background-color:darkblue;
+	width:100px;
+	height:100px;
+	border: outset 5px;
+	transition: background-color 3s;
+	
+}
+	.button:hover {
+		background-color: lightblue;
+	}

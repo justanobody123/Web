@@ -14,6 +14,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "CSS", "CSS\CSS.vcxproj", "{A46AE660-2431-427B-805D-56B41BC287BE}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "PeriodicTable", "PeriodicTable\PeriodicTable.vcxproj", "{BA492415-33FC-4E09-BDE4-6B69AAD979BD}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -30,6 +32,14 @@ Global
 		{A46AE660-2431-427B-805D-56B41BC287BE}.Release|x64.Build.0 = Release|x64
 		{A46AE660-2431-427B-805D-56B41BC287BE}.Release|x86.ActiveCfg = Release|Win32
 		{A46AE660-2431-427B-805D-56B41BC287BE}.Release|x86.Build.0 = Release|Win32
+		{BA492415-33FC-4E09-BDE4-6B69AAD979BD}.Debug|x64.ActiveCfg = Debug|x64
+		{BA492415-33FC-4E09-BDE4-6B69AAD979BD}.Debug|x64.Build.0 = Debug|x64
+		{BA492415-33FC-4E09-BDE4-6B69AAD979BD}.Debug|x86.ActiveCfg = Debug|Win32
+		{BA492415-33FC-4E09-BDE4-6B69AAD979BD}.Debug|x86.Build.0 = Debug|Win32
+		{BA492415-33FC-4E09-BDE4-6B69AAD979BD}.Release|x64.ActiveCfg = Release|x64
+		{BA492415-33FC-4E09-BDE4-6B69AAD979BD}.Release|x64.Build.0 = Release|x64
+		{BA492415-33FC-4E09-BDE4-6B69AAD979BD}.Release|x86.ActiveCfg = Release|Win32
+		{BA492415-33FC-4E09-BDE4-6B69AAD979BD}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

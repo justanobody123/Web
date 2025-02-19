@@ -102,3 +102,11 @@ td {
 	margin-left: 50px;
 	font-weight: 100;
 }
+div > table
+{
+	background-color:darkblue;
+}
+h3 + p
+{
+	background-color:Highlight;
+}

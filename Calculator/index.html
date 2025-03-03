@@ -1,66 +1,68 @@
-﻿<!DOCTYPE html>
+﻿﻿
+<!DOCTYPE html>
 
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
 <head>
-    <meta charset="utf-8" />
-	<link href="style.css" rel="stylesheet" />
-    <title>Calculator</title>
+	<meta charset="utf-8" />
+	<link rel="stylesheet" href="style.css">
+	<title>Калькулятор</title>
 </head>
 <body>
-	<div class="calculator">
-		<div class="header">
-			<div class="left-align">
-				<img src="img/calc-icon.png" class="small-icon" />
-				<div class="title">Calculator</div>
-			</div>
-			<div class="right-align">
-				<img class="min-max-close" src="img/min-max-close.png"/>
-			</div>
-
-		</div>
-		
-		<div class="interface">
-			<div class="strip-menu">
-				<div>Edit</div>
-				<div>View</div>
-				<div>Help</div>
-			</div>
-			<div class="display">0.</div>
-
-			<div class="top-buttons">
-				<div class="empty-button"></div>
-				<div class="large-button red-text">Backspace</div>
-				<div class="large-button red-text">Ce</div>
-				<div class="large-button red-text">C</div>
-			</div>
-			<div class="buttons">
-				<div class="memory-buttons">
-					<div class="small-button red-text">MC</div>
-					<div class="small-button red-text">MR</div>
-					<div class="small-button red-text">MS</div>
-					<div class="small-button red-text">M+</div>
+	<div id="desktop">
+		<div class="main-window">
+			<div class="title-bar">
+				<div class="window-title">
+					<img src="img/calc-icon.png" class="icon">
+					Калькулятор
 				</div>
-				<div class="digits-and-operations">
-					<div class="small-button blue-text">7</div>
-					<div class="small-button blue-text">8</div>
-					<div class="small-button blue-text">9</div>
-					<div class="small-button red-text">/</div>
-					<div class="small-button blue-text">sqrt</div>
-					<div class="small-button blue-text">4</div>
-					<div class="small-button blue-text">5</div>
-					<div class="small-button blue-text">6</div>
-					<div class="small-button red-text">*</div>
-					<div class="small-button blue-text">%</div>
-					<div class="small-button blue-text">1</div>
-					<div class="small-button blue-text">2</div>
-					<div class="small-button blue-text">3</div>
-					<div class="small-button red-text">-</div>
-					<div class="small-button blue-text">1/x</div>
-					<div class="small-button blue-text">0</div>
-					<div class="small-button blue-text">+/-</div>
-					<div class="small-button blue-text">.</div>
-					<div class="small-button red-text">+</div>
-					<div class="small-button red-text">=</div>
+				<div class="window-control-buttons">
+					<button class="window-control-button"><b>_</b></button>
+					<button class="window-control-button" disabled></button>
+					<button class="window-control-button close-button">X</button>
+				</div>
+			</div>
+			<div class="client-rect">
+				<div class="menu-bar">
+					<input type="button" value="Правка">
+					<input type="button" value="Вид">
+					<input type="button" value="Справка">
+				</div>
+				<input class="display" type="text" name="display" value="0." />
+				<div class="display-buttons">
+					<div id="square"></div>
+					<button>Backspace</button>
+					<button>CE</button>
+					<button>C</button>
+				</div>
+				<div class="buttons">
+					<div class="memory-buttons">
+						<button>MC</button>
+						<button>MR</button>
+						<button>MS</button>
+						<button>M+</button>
+					</div>
+					<div class="digits">
+						<button>7</button>
+						<button>8</button>
+						<button>9</button>
+						<button class="red-text">/</button>
+						<button>sqrt</button>
+						<button>4</button>
+						<button>5</button>
+						<button>6</button>
+						<button class="red-text">*</button>
+						<button>%</button>
+						<button>1</button>
+						<button>2</button>
+						<button>3</button>
+						<button class="red-text">-</button>
+						<button>1/x</button>
+						<button>0</button>
+						<button>+/-</button>
+						<button>.</button>
+						<button class="red-text">+</button>
+						<button class="red-text">=</button>
+					</div>
 				</div>
 			</div>
 		</div>

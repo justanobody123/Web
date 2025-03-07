@@ -1,0 +1,61 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Homework</title>
+</head>
+<body>
+	<h1>Homework</h1>
+	<h2>1. Пользователь вводит число, и на страницу выводится факториал этого числа;</h2>
+	<h2>2. Пользователь вводит основание и показатель степени, и на страницу выводится степень;</h2>
+	<h2>3. Вывести на экран ряд Фибоначчи до указанного предела;</h2>
+	<br />
+	<script>
+		//////////////////////////////////////////////////////////////////
+		let num = prompt("Введите число для получения его факториала: ");
+		parseInt(num, 10);
+		//num =- (num - (int)(num));
+		if (!isNaN(num)) {
+			let factorial = 1;
+			for (let i = 2; i <= num; i++) {
+				factorial *= i;
+			}
+			document.write(`<h2>${num}! = ${factorial}</h2>`);
+		}
+		else {
+			document.write('Не удалось пропарсить строку.<br>');
+		}
+		//////////////////////////////////////////////////////////////////
+		num = prompt("Введите основание степени: ");
+		let power = prompt("Введите показатель степени: ");
+		parseFloat(num);
+		parseInt(power);
+		if (!isNaN(num) && !isNaN(power))
+		{
+			
+			document.write(`<h2>${num}<sup>${power}</sup> = ${Math.pow(num, power)}</h2>`);
+		}
+		else {
+			document.write('Не удалось пропарсить основание степени или показатель.<br>');
+		}
+		//////////////////////////////////////////////////////////////////
+		num = prompt("Введите предел для вывода ряда чисел Фибоначчи: ");
+		if (!isNaN(num)) {
+			num = Math.abs(num);
+			let prev = 0, next = 1, temp = 0;
+			document.write('<h2><span>0 </span>')
+			while (next <= num) {
+				document.write(`<span>${next} </span>`);
+				temp = next;
+				next = next + prev;
+				prev = temp;
+			}
+			document.write('</h2>');
+		}
+		else {
+			document.write('Не удалось пропарсить строку.<br>');
+		}
+	</script>
+</body>
+</html>

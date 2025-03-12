@@ -1,0 +1,183 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta charset="utf-8" />
+	<title>Homework</title>
+</head>
+<body>
+	<h1>Homework</h1>
+	<h2>
+		1. Для массива из 5 элементов найти сумму, среднее-арифметическое, минимальное и максимальное значение,
+		так же, массив нужно отсортировать;
+	</h2>
+	<h2>2. Массив из 10 элементов заполнить уникальными случайными числами в диапазоне от 20 до 30;</h2>
+	<h2>
+		3. Есть массив из 10 элементов, значения в котором могут повторяться.
+		Необходимо найти повторяющиеся значения, вывести их на экран
+		и вывести на экран количество повторений каждого значения.
+	</h2>
+	<h2>4. Все эти задачи решить как для одномерных, так и для двумерных массивов;</h2>
+	<h2>5. Пользователь вводит десятиное число, и видит на экране его двоичный и шестнадцатерицный аналог;</h2>
+	<hr />
+	<script>
+		function sum(array) {
+			if (!Array.isArray(array)) {
+				return;
+			}
+			let sum = 0;
+			for (let i in array) {
+				if (Array.isArray(array[i])) {
+					for (let j in array[i]) {
+						if (!isNaN(array[i][j])) {
+							sum += array[i][j];
+						}
+					}
+				}
+				else {
+					if (!isNaN(array[i])) {
+						sum += array[i];
+					}
+				}
+
+			}
+			return sum;
+		}
+		let arr =
+			[
+				[1, 3, 4, 2, 5],
+				[1, null, 3, 4, 5],
+				[1, 2, 4, 'Hello', 3, 5]
+			];
+		function avg(array) {
+			if (!Array.isArray(array)) {
+				return;
+			}
+			let sum = 0;
+			let counter = 0;
+			for (let i in array) {
+				if (Array.isArray(array[i])) {
+					for (let j in array[i]) {
+						if (!isNaN(array[i][j])) {
+							sum += array[i][j];
+							counter++;
+						}
+					}
+				}
+				else {
+					if (!isNaN(array[i])) {
+						sum += array[i];
+						counter++;
+					}
+				}
+
+			}
+			return sum / counter;
+		}
+		function min(array) {
+			if (!Array.isArray(array)) {
+				return;
+			}
+			let min = Number.MAX_VALUE;
+			for (let i in array) {
+				if (Array.isArray(array[i])) {
+					for (let j in array[i]) {
+						if (!isNaN(array[i][j])) {
+							if (min > array[i][j]) {
+								min = array[i][j]
+							}
+						}
+					}
+				}
+				else {
+					if (!isNaN(array[i])) {
+						if (min > array[i]) {
+							min = array[i]
+						}
+					}
+				}
+
+			}
+			if (min == Number.MAX_VALUE) {
+				return;
+			}
+			else return min;
+		}
+		function max(array) {
+			if (!Array.isArray(array)) {
+				return;
+			}
+			let max = Number.MIN_VALUE;
+			for (let i in array) {
+				if (Array.isArray(array[i])) {
+					for (let j in array[i]) {
+						if (!isNaN(array[i][j])) {
+							if (max < array[i][j]) {
+								max = array[i][j]
+							}
+						}
+					}
+				}
+				else {
+					if (!isNaN(array[i])) {
+						if (max < array[i]) {
+							max = array[i]
+						}
+					}
+				}
+
+			}
+			if (max == Number.MIN_VALUE) {
+				return;
+			}
+			else return max;
+		}
+		function sort(array) {
+			if (!Array.isArray(array)) {
+				return;
+			}
+			//Если массив многомерный, то вызываем функцию для сортировки подмассива
+			//Если массив одномерный - сортируем его выбором
+			let min, pos;
+			for (let i = 0; i < array.length; i++) {
+				if (!Array.isArray(array[i])) {
+					//Сортировка выбором
+					if (!Number.isNaN(array[i])) {
+						min = array[i];
+						pos = i;
+					}
+					else {
+						continue;
+					}
+					for (let j = i + 1; j < array.length - 1; j++) {
+
+						if (!Number.isNaN(array[j])) {
+							if (min > array[j]) {
+								min = array[j];
+								pos = j;
+							}
+						}
+					}
+					if (pos != i) {
+						let temp = min;
+						array[pos] = array[i];
+						array[i] = temp;
+					}
+				}
+				else {
+					//Вызываем sort для сортировки подмассива
+					sort(array[i]);
+				}
+			}
+		}
+		console.log('-------------------------#1-------------------------');
+		console.log('Сумма элементов массива: ' + sum(arr));
+		console.log('Среднее арифметическое элементов массива: ' + avg(arr));
+		console.log('Минимальное значение в массиве: ' + min(arr));
+		console.log('Максимальное значение в массиве: ' + max(arr));
+		sort(arr);
+		console.log(arr);
+		console.log('-------------------------#2-------------------------');
+	</script>
+</body>
+</html>

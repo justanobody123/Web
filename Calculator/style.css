@@ -1,7 +1,9 @@
-﻿﻿body {
+﻿﻿body
+{
 }
 
-#desktop {
+#desktop
+{
 	/*https: //www.w3schools.com/cssref/css_units.php width:98vw;*/
 	/*height: 95vh;*/
 	height: 600px;
@@ -11,14 +13,16 @@
 	align-items: center; /*Выравнивание по вертикали*/
 }
 
-.main-window {
+.main-window
+{
 	width: 520px;
 	height: 420px;
 	/*border:solid 1px;*/
 	font-family: Tahoma;
 }
 
-.title-bar {
+.title-bar
+{
 	background-image: linear-gradient(#23AAFF, #0259e6,#0259e6,#0259e6,#0259e6, #0367fa, #0367fa, #0367fa, #0367fa,#2379ed);
 	height: 32px;
 	border-radius: 8px 8px 0 0;
@@ -32,19 +36,22 @@
 	justify-content: space-between;
 }
 
-.icon {
+.icon
+{
 	width: 24px;
 	height: 24px;
 	margin: 8px;
 }
 
-.window-control-buttons, .window-title {
+.window-control-buttons, .window-title
+{
 	display: flex;
 	align-items: center;
 	margin: 4px;
 }
 
-.window-control-button {
+.window-control-button
+{
 	width: 24px;
 	height: 24px;
 	margin: 1px;
@@ -56,24 +63,28 @@
 	border-radius: 2px;
 }
 
-	.window-control-button:hover, button:disabled {
+	.window-control-button:hover, button:disabled
+	{
 		border-color: lightgrey;
 	}
 
-	.window-control-button:active {
+	.window-control-button:active
+	{
 		border-color: gray;
 	}
 /*button:disabled
 {
 		border-color: lightgrey;
 }*/
-.close-button {
+.close-button
+{
 	/*background-image: url("img/close_button.png");*/
 	background-image: linear-gradient(to bottom right, #c97475, #c76042);
 	box-shadow: inset 1px 1px 3px 1px #c49a9b;
 }
 
-.client-rect {
+.client-rect
+{
 	background-color: #ebe9d8;
 	height: 100%;
 	/*border-left: solid 4px transparent;*/
@@ -87,84 +98,112 @@
 	flex-direction: column;
 }
 
-.menu-bar {
+.menu-bar
+{
 	box-shadow: 0 1px 0 0 white;
 	padding: 2px;
 }
 
-	.menu-bar > input[type=button] {
+	.menu-bar > input[type=button]
+	{
 		border: none;
 		background-color: transparent;
 	}
 
-		.menu-bar > input[type=button]:hover {
+		.menu-bar > input[type=button]:hover
+		{
 			/*border: none;
 	background-color: transparent;*/
 			box-shadow: 0 0 0 1px grey;
 		}
 
-.display {
+.display
+{
 	margin: 10px;
 	text-align: right;
 	font-size: 18px;
 }
 
-.display-buttons {
+.display-buttons
+{
 	display: flex;
 	margin: 10px;
 }
 
-	.display-buttons > div {
+	.display-buttons > div
+	{
 		width: 40px;
 		height: 40px;
 		border: inset 2px;
 		margin: 8px 10px;
 	}
 
-	.display-buttons > button {
+	.display-buttons > button
+	{
 		width: 128px;
 		color: red;
 		margin: 8px 5px;
 	}
 
-.debug {
+.debug
+{
 	border: solid 1px black;
 }
+
 .memory-buttons
 {
-	display:flex;
-	flex-direction:column;
+	display: flex;
+	flex-direction: column;
 	width: 64px;
-	margin:10px;
+	margin: 10px;
 }
-.memory-buttons > button
+
+	.memory-buttons > button
+	{
+		width: 54px;
+		height: 44px;
+		margin: 10px;
+		color: red;
+	}
+
+.digits
 {
-	width:54px;
-	height:44px;
-	margin:10px;
-	color: red;
-}
-.digits {
 	display: grid;
 	grid-template-columns: 54px 54px 54px 54px 54px;
 	grid-template-rows: 44px 44px 44px 44px;
-	justify-content:space-evenly;
-	align-content:space-evenly;
-	width:100%;
+	justify-content: space-evenly;
+	align-content: space-evenly;
+	width: 100%;
 }
-.digits > button
-{
-	color:blue;
-}
+
+	.digits > button
+	{
+		color: blue;
+	}
+
 .buttons
 {
-	display:flex;
-	flex-direction:row;
+	display: flex;
+	flex-direction: row;
 }
-.red-text {
+
+.red-text
+{
 	color: red !important;
 }
-button {
+
+button
+{
 	border-radius: 6px;
 	border: 1px solid #003B6D;
 }
+
+	button:hover
+	{
+		background-color: white;
+	}
+
+	button:active
+	{
+		background-color: aliceblue;
+	}

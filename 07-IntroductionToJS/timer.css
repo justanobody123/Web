@@ -1,0 +1,64 @@
+﻿/*@keyframes input-button-hover-animation
+{
+	from
+	{
+		background-color: #C7DBFF;
+	}
+	to
+	{
+		background-color: #DBE8FF;
+	}
+}*/
+/**
+{
+	border: 1px solid;
+}*/
+body
+{
+	background-color: #E5EDFF;
+	color: #000023;
+	display:flex;
+	align-items:center;
+	height:675px;
+}
+.container
+{
+	
+	width: 500px;
+	height: 250px;
+	margin: auto;
+	text-align:center;
+}
+.timer
+{
+	font-family: "Roboto";
+	font-size: 40px;
+	background-color: #E5EDFF;
+	border:none;
+}
+.input-buttons
+{
+	display: flex;
+	width: 350px;
+	justify-content:space-evenly;
+	margin: 30px auto;
+
+}
+	.input-buttons > button
+	{
+		background-color: #C7DBFF;
+		border-radius: 15px;
+		font-size: 25px;
+		border: 1px solid #D1D9E7;
+
+	}
+	/*Здесь важен порядок стилей: сначала ховер, потом актив, иначе актив отображаться не будет*/
+		.input-buttons > button:hover
+		{
+			background-color: #D6E6FF;
+		}
+		.input-buttons > button:active
+		{
+			background-color: #A8C7FF;
+		}
+		

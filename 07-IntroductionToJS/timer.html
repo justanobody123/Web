@@ -1,0 +1,87 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<link href="timer.css" rel="stylesheet" />
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100..900&display=swap" rel="stylesheet">
+	<title>Timer</title>
+</head>
+<body>
+	<div class="container">
+		<input class="timer" type="datetime-local" name="timer" />
+		<div class="input-buttons">
+			<button class="start">Старт</button>
+			<button class="reset">Сброс</button>
+		</div>
+		<div class="time-left"></div>
+	</div>
+	<script>
+		let timer_input = document.querySelector(".timer");
+		let time_left_div = document.querySelector(".time-left");
+		let start_button = document.querySelector(".start");
+		let reset_button = document.querySelector(".reset");
+		let target_time;
+		let is_running = false;
+
+		function updateTimeLeft()
+		{
+			if (!is_running) return;
+
+			let now = new Date();
+			let diff = target_time - now;
+			if (diff <= 0)
+			{
+				time_left_div.innerHTML = "Время истекло.";
+				is_running = false;
+				return;
+			}
+
+			let years = Math.floor(diff / (1000 * 60 * 60 * 24 * 365));
+			diff %= (1000 * 60 * 60 * 24 * 365);
+			let months = Math.floor(diff / (1000 * 60 * 60 * 24 * 30));
+			diff %= (1000 * 60 * 60 * 24 * 30);
+			let days = Math.floor(diff / (1000 * 60 * 60 * 24));
+			diff %= (1000 * 60 * 60 * 24);
+			let hours = Math.floor(diff / (1000 * 60 * 60));
+			diff %= (1000 * 60 * 60);
+			let minutes = Math.floor(diff / (1000 * 60));
+			diff %= (1000 * 60);
+			let seconds = Math.floor(diff / 1000);
+			time_left_div.innerHTML = `Осталось: ${years} лет, ${months} месяцев, ${days} дней, ${hours} часов, ${minutes} минут, ${seconds} секунд.`;
+
+			setTimeout(updateTimeLeft, 1000);
+		}
+
+		function startTimer()
+		{
+			if (!timer_input.value)
+			{
+				alert("Выберите дату и время.");
+				return;
+			}
+			if (!is_running)
+			{
+				target_time = new Date(timer_input.value);
+				if (target_time <= new Date())
+				{
+					alert("Выбранное время уже прошло.");
+					return;
+				}
+				is_running = true;
+				updateTimeLeft();
+			}
+		}
+
+		function resetTimer()
+		{
+			is_running = false;
+			time_left_div.innerHTML = "";
+		}
+
+		start_button.addEventListener("click", startTimer);
+		reset_button.addEventListener("click", resetTimer);
+	</script>
+</body>
+</html>

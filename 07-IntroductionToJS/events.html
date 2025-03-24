@@ -56,7 +56,7 @@
 	</div>-->
 
 	<hr>
-	<img src="img/padStart.png">
+	<!--<img src="img/padStart.png">-->
 	<h2>Date & Time</h2>
 	<hr>
 	<div id="date"></div>
@@ -74,7 +74,7 @@
 	<hr>
 	<div id="user-data">
 		<!--<input type="date" id="user-date" value="2025-03-25">
-		<input type="time" id="user-time" value="16:00">-->
+	<input type="time" id="user-time" value="16:00">-->
 		<input type="datetime-local" id="user-datetime-local" value="2025-03-21 16:30">
 		<input type="button" id="start-timer" value="Start" onclick="start_timer()">
 		<br>
@@ -86,12 +86,23 @@
 		<div id="current-timezone"></div>
 		<div id="user-timezone"></div>
 		<div id="difference"></div>
-		<div id="time-units"></div>
+		<div id="time-units">
+
+		</div>
+		<div id="time-blocks">
+			<div id="years" class="time-block">		<div class="time-block-title">0 d</div></div>
+			<div id="months" class="time-block">	<div class="time-block-title">0 m</div></div>
+			<div id="weeks" class="time-block">		<div class="time-block-title">0 w</div></div>
+			<div id="days" class="time-block">		<div class="time-block-title">0 d</div></div>
+			<div id="hours" class="time-block">		<div class="time-block-title">0 h</div></div>
+			<div id="minutes" class="time-block">	<div class="time-block-title">0 m</div></div>
+			<div id="seconds" class="time-block">	<div class="time-block-title">0 s</div></div>
+		</div>
 	</div>
 
 	<script type="text/javascript" src="events1.js"></script>
 	<script type="text/javascript" src="events2.js"></script>
-	<script type="text/javascript" src="switch_button.js"></script>
-	<script type="text/javascript" src="date_time.js"></script>
+	<script type="text/javascript" src="switch-button.js"></script>
+	<script type="text/javascript" src="datetime.js"></script>
 </body>
 </html>

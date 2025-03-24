@@ -33,7 +33,7 @@ function tick_timer()
 
 	let time_string = `${hh}:${mm}:${ss}`;
 	document.getElementById("time").innerHTML = time_string;
-	setTimeout(tick_timer, 1000);	//setTimeout(function_pointer, milliseconds) - �������� ��������� ������� ����� ��������� ���������� �������.
+	setTimeout(tick_timer, 1000);	//setTimeout(function_pointer, milliseconds)
 }
 
 function checkNumber(i)
@@ -97,48 +97,75 @@ function countdown_timer()
 
 	document.getElementById("difference").innerHTML = timestamp;
 
-
+	console.log(document.getElementById("years"));
 	let years = Math.trunc(timestamp / SECONDS_IN_YEAR);
 	if (years > 0)
 	{
 		timestamp = Math.trunc(timestamp % (years * SECONDS_IN_YEAR));
+		document.getElementById("years").innerHTML = `${years} y`
 	}
-
-	let monthes = Math.trunc(timestamp / SECONDS_IN_MONTH);
-	if (monthes > 0)
+	else
 	{
-		timestamp = Math.trunc(timestamp % (monthes * SECONDS_IN_MONTH));
+		document.getElementById("years").style.display = "none";
 	}
 
+	let months = Math.trunc(timestamp / SECONDS_IN_MONTH);
+	if (months > 0)
+	{
+		timestamp = Math.trunc(timestamp % (months * SECONDS_IN_MONTH));
+		document.getElementById("months").innerHTML = `${months} m`
+	}
+	else
+	{
+		document.getElementById("months").style.display = "none";
+	}
 	let weeks = Math.trunc(timestamp / SECONDS_IN_WEEK);
 	if (weeks > 0)
 	{
 		timestamp = Math.trunc(timestamp % (weeks * SECONDS_IN_WEEK));
+		document.getElementById("weeks").innerHTML = `${weeks} w`
 	}
-
+	else
+	{
+		document.getElementById("weeks").style.display = "none";
+	}
 	let days = Math.trunc(timestamp / SECONDS_IN_DAY);
 	if (days > 0)
 	{
 		timestamp = Math.trunc(timestamp % (days * SECONDS_IN_DAY));
+		document.getElementById("days").innerHTML = `${days} d`
 	}
-
+	else
+	{
+		document.getElementById("days").style.display = "none";
+	}
 	let hours = Math.trunc(time_of_day / SECONDS_IN_HOUR);
 	if (hours > 0)
 	{
 		time_of_day = Math.trunc(time_of_day % (hours * SECONDS_IN_HOUR));
+		document.getElementById("hours").innerHTML = `${hours} h`
 	}
-
+	else
+	{
+		document.getElementById("hours").style.display = "none";
+	}
 	let minutes = Math.trunc(time_of_day / SECONDS_IN_MINUTE);
 	if (minutes > 0)
 	{
 		time_of_day = Math.trunc(time_of_day % (minutes * SECONDS_IN_MINUTE));
+		document.getElementById("minutes").style.display = "flex";
+		document.getElementById("minutes").innerHTML = `${minutes} m`
 	}
-
+	else
+	{
+		document.getElementById("minutes").style.display = "none";
+	}
 	let seconds = Math.trunc(time_of_day);
+	document.getElementById("seconds").innerHTML = `${seconds} s`
 
 
 	document.getElementById("time-units").innerHTML =
-		`${years} years, ${monthes} months, ${weeks} weeks, ${days} days, ${hours} hours, ${minutes} minutes, ${seconds} seconds`;
+		`${years} years, ${months} months, ${weeks} weeks, ${days} days, ${hours} hours, ${minutes} minutes, ${seconds} seconds`;
 
 	setTimeout(countdown_timer, 1000);
 }

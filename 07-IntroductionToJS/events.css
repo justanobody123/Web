@@ -31,3 +31,24 @@
 	height: 50px;
 	background-color: lightblue;
 }
+#time-blocks{
+	display:flex;
+	justify-content:space-evenly;
+}
+.time-block
+{
+	font-size: 30px;
+	width: 100px;
+	height: 120px;
+	background-color: darkblue;
+	color: red;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border: 3px solid red;
+	border-radius: 8px;
+}
+.time-block-title
+{
+	
+}

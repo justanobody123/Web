@@ -31,13 +31,22 @@
 	height: 50px;
 	background-color: lightblue;
 }
-#time-blocks{
+#display{
 	display:flex;
-	justify-content:space-evenly;
+	justify-content:space-around;
 }
 .time-block
 {
-	font-size: 30px;
+	width:90px;
+	height:120px;
+	/*background-color:blue;*/
+	text-align:center;
+	/*color:white;*/
+	font-size:24px;
+	border:solid 2px;
+	border-radius:8px;
+
+	/*font-size: 30px;
 	width: 100px;
 	height: 120px;
 	background-color: darkblue;
@@ -46,9 +55,19 @@
 	align-items: center;
 	justify-content: center;
 	border: 3px solid red;
-	border-radius: 8px;
+	border-radius: 8px;*/
 }
-.time-block-title
+.time-unit
 {
 	
+	height:80px;
+	background-color:blue;
+	color:white;
+	padding:16px 0 0 0;
+}
+.time-marker
+{
+	background-color: red;
+	color: white;
+	font-size: 24px;
 }

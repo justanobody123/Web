@@ -116,16 +116,16 @@ function countdown_timer()
 	{
 		timestamp = Math.trunc(timestamp % (years * SECONDS_IN_YEAR));
 		let years_unit = document.getElementById("years-unit");
-		if (years_unit == null)
-		{
-			display.prepend(createTimeBlock("years", years));
-		}
+		//if (years_unit == null)
+		//{
+		//	display.prepend(createTimeBlock("years", years));
+		//}
 		
 	}
-	else
-	{
-		removeTimeBlock("years");
-	}
+	//else
+	//{
+	//	removeTimeBlock("years");
+	//}
 	let debug_display = document.getElementById("display");
 	console.log(debug_display);
 	
@@ -134,19 +134,19 @@ function countdown_timer()
 	{
 		timestamp = Math.trunc(timestamp % (months * SECONDS_IN_MONTH));
 		let months_unit = document.getElementById("months-unit")
-		if (months_unit == null)
-		{
-			let years_unit = document.getElementById("years-unit");
-			//if (years_unit =)
-			//{
+		//if (months_unit == null)
+		//{
+		//	let years_unit = document.getElementById("years-unit");
+		//	//if (years_unit =)
+		//	//{
 
-			//}
-		}
+		//	//}
+		//}
 	}
-	else
-	{
-		removeTimeBlock("months");
-	}
+	//else
+	//{
+	//	removeTimeBlock("months");
+	//}
 	let weeks = time_units[2] = Math.trunc(timestamp / SECONDS_IN_WEEK);
 	if (weeks > 0)
 	{
@@ -173,29 +173,30 @@ function countdown_timer()
 
 	let seconds = time_units[6] = Math.trunc(time_of_day);
 
-	for (let i = 1; i < time_units.length - 2; i++)
-	{
-		if (document.getElementById(`${time_unit_names[i]}-unit`) == null)
-		{
-    if (time_units[i - 1] === 0)
-			{
-				display.prepend(createTimeBlock(time_unit_names[i], time_units[i]));
-			}
-			else
-			{
-				let unit = document.getElementById(`${time_unit_names[i - 1]}-unit`);
-				unit.parentElement.after(createTimeBlock(time_unit_names[i], time_units[i]));
-			}
-		}
-		else
-		{
-			document.getElementById(`${time_unit_names[i]}-unit`).innerHTML = time_units[i];
-		}
-	}
+	//for (let i = 1; i < time_units.length - 2; i++)
+	//{
+	//	if (document.getElementById(`${time_unit_names[i]}-unit`) == null)
+	//	{
+ //   if (time_units[i - 1] === 0)
+	//		{
+	//			display.prepend(createTimeBlock(time_unit_names[i], time_units[i]));
+	//		}
+	//		else
+	//		{
+	//			let unit = document.getElementById(`${time_unit_names[i - 1]}-unit`);
+	//			unit.parentElement.after(createTimeBlock(time_unit_names[i], time_units[i]));
+	//		}
+	//	}
+	//	else
+	//	{
+	//		document.getElementById(`${time_unit_names[i]}-unit`).innerHTML = time_units[i];
+	//	}
+	//}
+	redrawBlocks(time_units);
 
-	document.getElementById("hours-unit").innerHTML = hours;
-	document.getElementById("minutes-unit").innerHTML = minutes;
-	document.getElementById("seconds-unit").innerHTML = seconds;
+	//document.getElementById("hours-unit").innerHTML = hours;
+	//document.getElementById("minutes-unit").innerHTML = minutes;
+	//document.getElementById("seconds-unit").innerHTML = seconds;
 
 	document.getElementById("time-units").innerHTML =
 		`${years} years, ${months} months, ${weeks} weeks, ${days} days, ${hours} hours, ${minutes} minutes, ${seconds} seconds`;
@@ -233,5 +234,23 @@ function removeTimeBlock(name)
 		let block = unit.parentElement;
 		let display = block.parentElement;
 		display.removeChild(block);
+	}
+}
+function redrawBlocks(time_units)
+{
+	console.log("redraw");
+	let display = document.getElementById("display");
+	const time_unit_names = new Array("years", "months", "weeks", "days", "hours", "minutes", "seconds");
+	for (let i = 0; i < time_unit_names.length; i++)
+	{
+		removeTimeBlock(time_unit_names[i]);
+	}
+	for (var i = 0; i < time_unit_names.length; i++)
+	{
+
+		if (time_units[i])
+		{
+			display.append(createTimeBlock(time_unit_names[i], time_units[i]));
+		}
 	}
 }

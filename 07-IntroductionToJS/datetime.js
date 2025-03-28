@@ -99,11 +99,6 @@ function countdown_timer()
 	{
 		let alarm = new Audio("audio/alarm.wav")
 		alarm.play();
-		//let result = confirm("Время истекло");
-		//if (result || !result)
-		//{
-		//	alarm.pause();
-		//}
 	}
 	let time_of_day = timestamp % SECONDS_IN_DAY;
 

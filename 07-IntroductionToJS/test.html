@@ -1,0 +1,84 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta charset="utf-8" />
+	<title>Test</title>
+</head>
+<body>
+	<form id="test">
+		<h2>1. Какая буква последняя в латинском алфавите?</h2>
+		<label for="x">X</label>
+		<input type="radio" name="letter" value="x" checked id="x" />
+		<br />
+		<label for="y">Y</label>
+		<input type="radio" name="letter" value="y" id="y" />
+		<br />
+		<label for="z">Z</label>
+		<input type="radio" name="letter" value="z" id="z" />
+		<br />
+		<h2>2. Продолжите песню: "В лесу родилась..."</h2>
+		<label for="girl">Девочка</label>
+		<input type="radio" name="song" value="girl" checked id="girl" />
+		<br />
+		<label for="christmas-tree">Ёлочка</label>
+		<input type="radio" name="song" value="christmas-tree" id="christmas-tree" />
+		<br />
+		<label for="squirrel">Белочка</label>
+		<input type="radio" name="song" value="squirrel" id="squirrel" />
+		<br />
+		<h2>3. Сколько будет 2 + 2?</h2>
+		<label for="four">4</label>
+		<input type="radio" name="expression" value="four" checked id="four" />
+		<br />
+		<label for="five">5</label>
+		<input type="radio" name="expression" value="five" id="five" />
+		<br />
+		<label for="thirty-one">31</label>
+		<input type="radio" name="expression" value="thirty-one" id="thirty-one" />
+		<br />
+		<h2>4. Какой ответ правильный?</h2>
+		<label for="correct">Этот</label>
+		<input type="radio" name="answer" value="correct" checked id="correct" />
+		<br />
+		<label for="incorrect">Не этот</label>
+		<input type="radio" name="answer" value="incorrect" id="incorrect" />
+		<br />
+		<label for="incorrect-as-well">И не этот</label>
+		<input type="radio" name="answer" value="incorrect-as-well" id="incorrect-as-well" />
+		<br />
+		<h2>5. Сколько дней будет в неделе, если пингвины научатся летать?</h2>
+		<label for="one">Один</label>
+		<input type="radio" name="weekdays" value="one" checked id="one" />
+		<br />
+		<label for="three">Три</label>
+		<input type="radio" name="weekdays" value="three" id="three" />
+		<br />
+		<label for="seven">Семь</label>
+		<input type="radio" name="weekdays" value="seven" id="seven" />
+		<br />
+		<br />
+		<button type="submit" id="submit" onclick="countScore()">Результат</button>
+		<div id="result"></div>
+	</form>
+	<script>	
+		function countScore()
+		{
+			event.preventDefault(event);
+			let score = 0;
+			let test = document.getElementById("test");
+			let correctAnswers = ["z", "christmas-tree", "four", "correct", "seven"];
+			let themes = ["letter", "song", "expression", "answer", "weekdays"];
+			for (let i = 0; i < correctAnswers.length; i++)
+			{
+				let selected = document.querySelector(`input[name="${themes[i]}"]:checked`);
+				if (correctAnswers[i] === selected.value)
+				{
+					score++;
+				}
+			}
+			document.getElementById("result").innerHTML = `Ваш результат: ${score} из ${correctAnswers.length}`;
+		}
+	</script>
+</body>
+</html>
